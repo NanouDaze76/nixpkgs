@@ -14,6 +14,7 @@
 , typing-extensions
 
 # tests
+, pytest_7
 , pytestCheckHook
 , pytest-xdist
 , python-dateutil
@@ -49,7 +50,7 @@ buildPythonPackage rec {
   ];
 
   nativeCheckInputs = [
-    pytestCheckHook
+    (pytestCheckHook.override { pytest = pytest_7; })
     pytest-xdist
     python-dateutil
   ];
